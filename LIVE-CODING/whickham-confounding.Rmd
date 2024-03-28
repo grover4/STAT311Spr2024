@@ -87,6 +87,7 @@ glimpse(Whickham)   #function from dplyr - part of tidyverse
     ```{r calculator-code}
     # calculate survival rates for smokers and also for non-smokers 
 
+    
     ```
 
 
