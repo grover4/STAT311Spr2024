@@ -39,7 +39,7 @@ The `Whickham` dataset contains a subset of data on 1,314 women from the survey 
  - `age` age in years at the time of the first survey
 
 
-```{r map, out.width = "50%", echo = FALSE}
+```{r map, out.width = "50%", fig.align = "center", echo = FALSE}
 knitr::include_graphics("Whickham.png")
 ```
 
@@ -75,33 +75,32 @@ glimpse(Whickham)   #function from dplyr - part of tidyverse
 
 4. Below is a summary table obtained from the dataset. Calculate the % of smokers who are alive and the % non-smokers who are alive.  Does the relationship between smoking and survival match with your expectation? 
 
-```{r data-summary, echo=FALSE}
-Whickham %>% 
-   tabyl(smoker, outcome) %>% 
-   adorn_totals(where=c("row", "col")) 
+    ```{r data-summary, echo=FALSE}
+   Whickham %>% 
+       tabyl(smoker, outcome) %>% 
+       adorn_totals(where=c("row", "col")) 
 
 
-```
+    ```
    
    
+    ```{r calculator-code}
+    # calculate survival rates for smokers and also for non-smokers 
 
-```{r calculator-code}
-#write code to calculate the survival rates for smokers and also for non-smokers 
-
-```
+    ```
 
 
 
 5. Let's try and expand the picture by bringing a relevant factor - age at the time of the first survey - into view. The following box plot compares the ages of smokers and non-smokers. Do smokers tend to be younger? older?
 
 
-```{r age-smoking-graph, echo=FALSE}
+    ```{r age-smoking-graph, echo=FALSE}
 
-ggplot(data = Whickham, 
+    ggplot(data = Whickham, 
        mapping = aes(x = age, y = smoker)) + 
         geom_boxplot()
 
-```
+    ```
 
 
 
@@ -119,27 +118,28 @@ As we can see, confounding variables, if ignored, can lead to un-intuitive and e
 
 
 
-```{r correct-by-strata, echo = FALSE}
+    ```{r correct-by-strata, echo = FALSE}
 
-Whickham <- Whickham %>%   #define new age variable
+    Whickham <- Whickham %>%   #define new age variable
             mutate(
               age_cat = case_when(
               age <= 44 ~ "18-44",
               age > 44 & age <= 64 ~ "45-64",
               age > 64 ~ "65+"))
 
-Whickham %>% tabyl(smoker, outcome, age_cat) %>%
-   adorn_totals(where=c("row", "col"))
+    Whickham %>% tabyl(smoker, outcome, age_cat) %>%
+                     adorn_totals(where=c("row", "col"))
 
-```
+    ```
 
-Work in groups and use R as a calculator to calculate the % of non-smokers and % of smokers who are alive within each age group. I have create a new code chunk below for you to do your calculations. Then enter your answers in the table below.
+    Work in groups and use R as a calculator to calculate the % of non-smokers and % of smokers who are alive within each age group. I have create a new code chunk below for you to do your calculations. Then enter your answers in the table below.
 
-```{r problem7}
-#calculate % smokers who are alive and % non-smokers who are 
-#alive in each age group
+    ```{r problem7}
+    
+    # calculate % smokers who are alive and % non-smokers who are 
+    # alive in each age group
 
-```
+    ```
 
 
 |Age group | % non-smokers alive | % smokers alive
