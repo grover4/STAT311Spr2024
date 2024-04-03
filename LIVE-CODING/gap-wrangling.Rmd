@@ -66,16 +66,7 @@ Fill in the blanks in the code provided in each code chunk to accomplish a speci
     ```
 
 
-4. Does the result of the following code surprise you? Why or why not? How do the select helpers deal with case (capital letters/small letters) by default? Type `?contains` in the Console to see how to override the default and then try it.
-
-    ```{r part1-ex4}
-
-    gapminder %>% select( contains("POP") )
-
-    ```
-
-
-5. 
+4. 
 
 a. Sort the countries by life expectancy  to find the ones with the lowest life expectancy.  I have piped the result to the function `slice_head` from `dplyr` at the end of the pipeline to just print the first five rows.  
 
@@ -100,7 +91,7 @@ b. Sort the countries in descending order of `gdpPercap` in 2007 and view the 5 
 
     ```
 
-6. Create a new variable called `gdp` which recovers each country's GDP by multiplying the population `pop` and GDP per capita `gdpPercap`. Add the new variable to the `gapminder` data frame. Examine the dataframe in your Enviromment. What do you notice about where the new variable is located? 
+5. Create a new variable called `gdp` which recovers each country's GDP by multiplying the population `pop` and GDP per capita `gdpPercap`. Add the new variable to the `gapminder` data frame. Examine the dataframe in your Enviromment. What do you notice about where the new variable is located? 
 
     ```{r part1-ex6, eval = FALSE}
 gapminder <- gapminder %>% 
@@ -111,19 +102,19 @@ gapminder <- gapminder %>%
 **YOUR TURN: Answer the remaining problems in Part 1 by collaborating with your neighbors in small groups. Create a new code chunk below each question and write code to answer it. **
 
 
-7. Which countries had a life expectancy (`lifeExp`)  greater than or equal to 80 in 2002?
+6. Which countries had a life expectancy (`lifeExp`)  greater than or equal to 80 in 2002?
 
 
-8. What was the most populous country in Europe in 1992?  (You will want to first extract the rows from the data for Europe in 1992, then arrange in descending order on `pop`)
+7. What was the most populous country in Europe in 1992?  (You will want to first extract the rows from the data for Europe in 1992, then arrange in descending order on `pop`)
 
 
-9. Which country in the Americas had the shortest life expectancy in the year 1962? 
+8. Which country in the Americas had the shortest life expectancy in the year 1962? 
 
 
-10. Create a new variable `log_pop` which is the natural logarithm (`log`) of the population variable. Add the new variable to the gapminder data frame. (Then click on the `gapminder` dataframe in the Environment to see the column you just added!)
+9. Create a new variable `log_pop` which is the natural logarithm (`log`) of the population variable. Add the new variable to the gapminder data frame. (Then click on the `gapminder` dataframe in the Environment to see the column you just added!)
 
 
-11. Which country had the higher GDP per capita (`gdpPercap`) in 1977? United States or United Kingdom? (Hint: you will want to extract the rows of data for these two countries in 1977)
+10. Which country had the higher GDP per capita (`gdpPercap`) in 1977? United States or United Kingdom? (Hint: you will want to extract the rows of data for these two countries in 1977)
 
 
 
