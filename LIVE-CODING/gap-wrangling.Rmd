@@ -166,31 +166,16 @@ We now return to the `gapminder` data frame to answer more questions using the d
 
 7. Summarise the life expectancy `lifeExp` in 1952 by calculating the mean.
 
-```{r}
-gapminder %>% filter(year == 1952) %>% summarise(mean(lifeExp))
-```
+
 
 8. Summarise the life expectancy `lifeExp` in Asia in 1952 by calculating the mean. 
-```{r}
-gapminder %>% filter(year == 1952, continent == "Asia") %>% summarise(mean(lifeExp))
-```
+
 
 9. Summarise the life expectancy `lifeExp` for each continent in 2002 by calculating the median. Sort your results in descending order.
-```{r}
-gapminder %>% filter(year == 2002) %>% 
-  group_by(continent) %>% summarise(median_life = median(lifeExp)) %>% 
-        arrange(desc(median_life))
-```
+
 
 10.  Create a new variable called `gdp` which recovers each country's GDP by multiplying the population `pop` and GDP per capita `gdpPercap`. Summarise the `gdp` for each country by calculating the total across all the years. Which 5 countries have the highest totals?
 
-```{r}
-gapminder %>%
-             mutate(gdp = gdpPercap*pop) %>%
-              group_by(country) %>% 
-                summarise(total_gdp = sum(gdp)) %>%
-                      arrange(desc(total_gdp) )
-                 
-```
+
  
 
