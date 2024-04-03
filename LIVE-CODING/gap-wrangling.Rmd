@@ -125,7 +125,6 @@ gapminder <- gapminder %>%
 
 We now return to the `gapminder` data frame to answer more questions using the data verbs we learned today: `count`, `distinct`, `group_by` and `summarise`. Be sure to load the packages **tidyverse** and **gapminder** in our interactive environment by submitting the code in the **setup** code chunk at the top of the document. 
 
-Fill in the blanks in the code chunks below, then remove the `eval = FALSE` option. 
 
 1. How many unique countries does the data set contain? 
  
