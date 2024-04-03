@@ -28,7 +28,7 @@ Take a look at the variable types  with the `glimpse` function.
 
 * * * 
 
-## Part 1: Select, filter, mutate, arrange
+## Part 1: select, filter, mutate, arrange
 
 In this part, we will practice using the data verbs `filter`, `select`, `arrange` and `mutate` in order to answer various queries. 
 Fill in the blanks in the code provided in each code chunk to accomplish a specific task. Consult the slidedeck "Introduction to Data: Data Manipulation" for help. Each code chunk has the `eval` option set to FALSE. Once you have filled in the blanks you may delete this option so your code will run when the document is knitted.
@@ -130,7 +130,7 @@ gapminder <- gapminder %>%
 
 * * *
 
-## Part 2: `count`, `distinct`, `group_by`, `summarise`
+## Part 2: count, distinct, group_by, summarise
 
 We now return to the `gapminder` data frame to answer more questions using the data verbs we learned today: `count`, `distinct`, `group_by` and `summarise`. Be sure to load the packages **tidyverse** and **gapminder** in our interactive environment by submitting the code in the **setup** code chunk at the top of the document. 
 
