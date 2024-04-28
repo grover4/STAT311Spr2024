@@ -1,0 +1,245 @@
+---
+title: "Rate my Prof"
+subtitle: "STAT 311 Spring 2024"
+date: "`r Sys.Date()`"
+output:    
+      html_document:
+         toc: yes
+         toc_float: yes
+---
+
+
+# Introduction
+
+Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the influence of non-teaching related characteristics, such as the physical appearance of the instructor. The article titled, "Beauty in the classroom: instructors’ pulchritude and putative pedagogical productivity" (Hamermesh and Parker, 2005) found that instructors who are viewed to be better looking receive higher instructional ratings. (Daniel S. Hamermesh, Amy Parker, Beauty in the classroom: instructors pulchritude and putative pedagogical productivity, Economics of Education Review, Volume 24, Issue 4, August 2005, Pages 369-376, ISSN 0272-7757, 10.1016/j.econedurev.2004.07.013. http://www.sciencedirect.com/science/article/pii/S0272775704001165.)
+
+For this assignment you will analyze the data from this study in order to learn what goes into a positive professor evaluation.
+
+The data were gathered from end of semester student evaluations for a large sample of professors from the University of Texas at Austin. In addition, six students rated the professors’ physical appearance. 
+
+(This is a slightly modified version of the original data set that was released as part of the replication data for Data Analysis Using Regression and Multilevel/Hierarchical Models (Gelman and Hill, 2007).) The result is a data frame where each row contains a different course and columns represent variables about the courses and professors.
+
+# Learning goals
+
+-   Fitting linear models with numerical and categorical predictors
+
+-   Interpreting coefficients of the linear model
+
+-   Comparing models
+
+# Getting started
+
+## Packages
+
+In this activity we will work with the **tidyverse** package for much of the data wrangling and visualization, **tidymodels** for tidying the output and the data lives in the **openintro** package.
+
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+#load packages and set global options 
+
+library(tidyverse)     #umbrella package 
+library(openintro)     #for the data
+library(tidymodels)    #for model fitting/model comparison   
+
+```
+
+
+
+## The data
+
+The data can be found in the **openintro** package, and it’s called `evals`. Since the dataset is distributed with the package, we don’t need to load it separately; it becomes available to us when we load the package. You can find out more about the dataset by inspecting its documentation, which you can access by running ?evals in the Console or using the Help menu in RStudio to search for evals. You can also find this information here.
+
+
+# Exercises 
+
+## Part I: One numerical predictor
+
+In this part we will practice fitting a simple linear model with `score` as the response and `bty_avg` as the predictor variable.
+
+1. Make a histogram of `score`. Comment on the shape. Also calculate numerical summaries.
+
+    ```{r hist-scr}
+    ggplot(data = evals, 
+           mapping = aes(x = score))+
+      geom_histogram(binwidth = 0.5)
+    
+    evals %>% 
+      summarise( 
+        median_scr = median(score), 
+        q25 = quantile(score, p = 0.25),
+        q75 = quantile(score, p = 0.75) )
+    
+    ```
+
+2. Make a histogram of `bty_avg`. Comment on the shape. Also calculate numerical summaries.
+
+    ```{r hist-bty}
+     ggplot(data = evals, 
+           mapping = aes(x = bty_avg))+
+      geom_histogram(binwidth = 0.9)
+    
+    evals %>% 
+      summarise( 
+        median_bty = median(bty_avg), 
+        q25 = quantile(score, p = 0.25),
+        q75 = quantile(score, p = 0.75) )
+    
+    
+    ```
+
+3. Scatterplot smoothing: Create a scatterplot of the relationship between `score` and `bty_avg`. Add a line to the plot using a `geom_smooth` layer. Comment on the form, direction and strength of the relationship.
+
+    ```{r score-bty, message = F, warning = F}
+    
+    ggplot(data = evals,
+           mapping = aes(x = bty_avg,
+                         y = score) ) +
+      geom_point()+
+      geom_smooth(method = "lm",
+                  se = FALSE,
+                  fullrange = TRUE)
+    
+    ```
+
+    The scatterplot has a roughly oval shape which suggests a linear model is a reasonable approximation. The variables are positively related - as bty_avg increases, so does the score. It is not a very strong relationship.
+    
+4. Fit a simple linear regression model `evals_slr_fit` predicting the course evaluation `score` from the `bty_avg`. Print the results in a tidy format. Write the equation of the fitted line and interpret the slope (and intercept).
+
+    ```{r lm-slr}
+    
+    evals_slr_fit <- lm(score ~ bty_avg, data = evals)
+    
+    evals_slr_fit %>% 
+         tidy() %>%
+          select( term, estimate)
+    
+    
+    ```
+
+    The equation of the fitted line is 
+    score-hat = 3.88 + 0.0666 * bty_avg. 
+    
+    Interpretation: 
+    
+    When the bty_avg increases by 1 (unit), we can expect an increase of 0.0666 (slope) on the course evaluation score. 
+    
+    For a prof with a bty_avg score of 0, we can expect a course evaluation of 3.88 (intercept)
+
+5. Use your equation from exercise 4 to predict the `score` for a professor whose `bty_avg` is 5. If their actual score was 4.5, find is the prediction error?
+
+    ```{r}
+    pred_scr <- 3.88 + 0.0666*5
+    
+    pred_scr
+    ```
+
+    The predicted score is `r pred_scr`.
+
+    The prediction error for a person with observed score 4.5 is 
+    
+    ```{r}
+    error_scr <- 4.5 - 4.213
+    
+    ```
+    
+    The prediction error is `r error_scr`.
+    
+    
+* * *
+
+## Part II: One numerical and one categorical predictor
+
+In this part, we will practice fitting a linear regression model with `score` as the response and `bty_avg` and `gender` as the predictor variables.
+
+1. We know from Part I that `bty_avg` has a weak relationship with the course evaluation `score`.  Does `gender` influence `score`? Make a boxplot to examine this. Also calculate numerical summaries of the score by gender.
+
+    ```{r box-gender}
+    ggplot(data = evals,
+           mapping = aes(x = score,
+                         fill = gender))+
+      geom_boxplot()
+    
+    evals %>% 
+      group_by(gender) %>% 
+        summarise(median_scr = median(score),
+                  q25 = quantile(score, p = 0.25),
+                  q75 = quantile(score, p = 0.75))
+    
+    ```
+
+2. Scatterplot smoothing: Create a scatter plot of `score` vs `bty_avg` colored by `gender`. Use `geom_smooth` to fit two lines to the data: one for males and another for females.
+
+    ```{r}
+    ggplot(data = evals, 
+       mapping=aes(x = bty_avg, 
+                   y = score,
+                   color = gender))+
+     geom_point() +
+      geom_smooth(method = "lm",
+                  se = FALSE)
+
+    ```
+
+
+ 
+3. Fit a main effects linear model, `evals_main`, predicting course evaluation `score` from average beauty rating (`bty_avg`) and `gender`. 
+
+    - Print the coefficients of the model in a tidy format. 
+    
+    - Write the equation of the fitted lines for males and females. 
+    
+    - Interpret the model.
+    
+    - Make a scatter plot of `score` vs `bty_avg` with the points colored by gender and overlay the fitted lines from the main effects model. 
+
+    ```{r main}
+    
+    evals_main <- lm(score ~ bty_avg + gender, data = evals)
+    
+    evals_main %>% tidy() %>%
+                select(term, estimate)
+
+    ```
+
+    The equation of the main effects model is:
+    
+    score-hat = 3.75 + 0.0742*bty_avg_score + 0.172*gendermale
+    
+    For males, the fitted  line is
+    score-hat = 3.75 + 0.0742*bty_avg + 0.172 = 3.922 + 0.0742 *bty_avg
+              
+    For females, the fitted line is
+    score-hat = 3.75 + 0.0742*bty_avg
+    
+    
+    
+4.  Repeat exercise 3 for an interaction effects linear model, `evals_int_fit`, which predicts course evaluation `score` from  average beauty rating (`bty_avg`), `gender` and their interaction. 
+
+
+
+5.  Compare the models from Parts I and II by calculating goodness of fit measures like $R^2$ and adjusted $R^2$.
+
+
+
+**PARTICIPATION: Please do your calculations for the following problem and then record your answers from the table into CANVAS for the quiz titled Participation 5**
+
+6. Using the main effects model, `evals_main_fit`, find the predicted score for a  female instructor who had a `bty_avg` score of 4.5? How about for a male instructor? Fill in the numbers in the table below.
+
+|Gender | Predicted `score`  | 
+|:---   |    :---------      |
+|Female |                    |
+|Male   |                    |
+
+
+7. Repeat the previous problem using the interaction effects model `evals_int_fit`. 
+
+|Gender | Predicted `score`  | 
+|:---   |    :---------      |
+|Female |                    |
+|Male   |                    |
+
+
+
+
+## Acknowledgment
+
+This activity is from Data Science in a Box
