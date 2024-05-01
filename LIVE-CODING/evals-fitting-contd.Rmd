@@ -1,0 +1,109 @@
+---
+title: "Rate my Prof"
+subtitle: "STAT 311 Spring 2024"
+author: "Your Name Here"
+subtitle: "Linear Models"
+date: "`r Sys.Date()`"
+output:    
+      html_document:
+         toc: yes
+         toc_float: yes
+---
+
+
+We return to the `evals` dataframe from the **openintro** package to fit more models to the course evaluation `score`. Let's go ahead and load the packages we will need for the analysis.
+
+## Packages
+
+We will work with the **tidyverse**, **tidymodels** and the **openintro** packages as before. We will also use the `**GGally** package for making pairwise scatter plots.
+
+
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+#load packages and set global options 
+
+library(tidyverse)     #umbrella package 
+library(openintro)     #for the data
+library(tidymodels)    #for model fitting/model comparison   
+library(GGally)        #pairwise scatterplots
+
+```
+
+
+
+## Exercises 
+
+### Part III: Main effects with multiple predictors
+
+Let's return to the `evals` data in the **openintro** package and fit a few additional models for predicting the course evaluation ratings. Our focus is on interpreting the model equations. The key thing to note is that model building is a process, and you should be willing to explore and try different things. 
+
+The explanatory variables in this data set are either numerical or categorical and are of two types as shown below.
+
+ - prof characteristics: `rank`, `ethnicity`, `gender`, `age`,  `bty_avg`
+ 
+ - class characteristics: `cls_perc_eval`,  `cls_profs`, `cls_level`, `cls_credits`
+ 
+A reasonable strategy for manually building a model to predict course evaluation `scores` is to pick a couple of numerical predictors and one categorical predictor. 
+
+In this part, we will examine the numerical predictors first to identify a couple that seem relevant. Then we will turn to finding a categorical predictor.
+
+1. Use `ggpairs` to make a scatter plot matrix of `score` versus the numeric predictors:  `age`, `bty_avg`, `cls_perc_eval`. 
+
+
+The scatterplots don't show very strong relationships. Let's just pick `bty_avg` and `cls_perc_eval` as our numeric variables. They have slightly higher correlations with score (0.18) compared to age (-0.11). Also, `age` is somewhat correlated with `bty_avg`, so there is no need to have both in the model.
+
+2. Fit a main effects model `model1` to predict `score` from `bty_avg` and `cls_perc_eval`. 
+
+   - Present the output in a tidy format and write the equation of the fitted model.
+   
+   - Assess goodness of fit by calculating the adjusted R-square. Save this in a variable called `model1_rsq` and report it within a complete sentence using inline code.
+   
+   
+   
+Now, let us turn our attention to adding a categorical predictor into our model equation.
+
+3. Make a visualization `score` versus  `cls_level`. (You can also calculate grouped numerical summaries of `score` by `cls_level`)
+
+
+
+4. Fit a main effects model `model2` to predict  `score` from `bty_avg`, `cls_perc_eval` and `cls_level`. 
+
+     - Present the output in a tidy format and write the equation of the fitted model.
+   
+    - Assess goodness of fit by calculating the adjusted R-square. Save this in a variable called `model2_rsq` and report it within a complete sentence using inline code.
+   
+
+
+
+Let us now add the adjusted R-suare (as a percentage and rounded to 2 digits) for `model1` and `model2`in the table below for easy comparison.
+
+| Model     | Adjusted R square
+|:----      | :------------    
+| `model1`  | `r round(100 * model1_rsq,2)`
+| `model2`  | `r round(100 * model2_rsq,2)`
+
+
+
+***If there is time***
+
+
+Let us now consider `rank` as a possible predictor of `score`. Notice that it has three levels: teaching, tenured and tenure track.
+
+5. Make a visualization `score` versus  `rank`. (You can also calculate grouped numerical summaries of `score` by `rank``)
+
+
+6. Fit a main effects model `model3` to predict  `score` from `bty_avg`, and `rank`. 
+
+     - Present the output in a tidy format and write the equation of the fitted model.
+   
+    - Assess goodness of fit by calculating the adjusted R-square. Save this in a variable called `model3_rsq` and report it within a complete sentence using inline code.
+    
+
+
+
+
+
+
+
+## Acknowledgment
+
+This activity is from Data Science in a Box
