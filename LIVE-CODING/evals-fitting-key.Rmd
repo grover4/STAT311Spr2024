@@ -168,7 +168,7 @@ In this part, we will practice fitting a linear regression model with `score` as
 
 2. Scatterplot smoothing: Create a scatter plot of `score` vs `bty_avg` colored by `gender`. Use `geom_smooth` to fit two lines to the data: one for males and another for females.
 
-    ```{r}
+    ```{r message=FALSE, warning = FALSE}
     ggplot(data = evals, 
        mapping=aes(x = bty_avg, 
                    y = score,
@@ -191,18 +191,34 @@ In this part, we will practice fitting a linear regression model with `score` as
     
     - Make a scatter plot of `score` vs `bty_avg` with the points colored by gender and overlay the fitted lines from the main effects model. 
 
-    ```{r main}
-    
+    ```{r main-fit}
+    #fit main effects model
     evals_main <- lm(score ~ bty_avg + gender, data = evals)
     
+    #print estimates
     evals_main %>% tidy() %>%
                 select(term, estimate)
 
+    #make scatterplot
+    ggplot(data = evals,
+           mapping = aes(x = bty_avg,
+                         y = score, 
+                         color = gender))+
+      geom_point() +
+      geom_abline(slope = 0.0742, 
+                  intercept = 3.922, 
+                  color="turquoise")  +  #fitted line for men
+      geom_abline(slope = 0.0742, 
+                  intercept = 3.75,
+                  color = "red")+        #fitted line for women 
+      labs(title = "Main effects model",
+           subtitle = "score ~ bty_avg + gender")
+    
     ```
 
     The equation of the main effects model is:
     
-    score-hat = 3.75 + 0.0742*bty_avg_score + 0.172*gendermale
+    score-hat = 3.75 + 0.0742*bty_avg + 0.172*gendermale
     
     For males, the fitted  line is
     score-hat = 3.75 + 0.0742*bty_avg + 0.172 = 3.922 + 0.0742 *bty_avg
@@ -212,17 +228,62 @@ In this part, we will practice fitting a linear regression model with `score` as
     
     
     
-4.  Repeat exercise 3 for an interaction effects linear model, `evals_int_fit`, which predicts course evaluation `score` from  average beauty rating (`bty_avg`), `gender` and their interaction. 
+4.  Repeat exercise 3 for an interaction effects linear model, `evals_int`, which predicts course evaluation `score` from  average beauty rating (`bty_avg`), `gender` and their interaction. 
 
+    ```{r int-fit}
+    #fit interaction effects model
+    
+    evals_int <- lm(score ~ bty_avg*gender, data = evals)
+    
+    #print estimates
+    
+    evals_int %>% tidy() %>%
+                select(term, estimate)
 
+    #make scatterplot
+    ggplot(data = evals,
+           mapping = aes(x = bty_avg,
+                         y = score, 
+                         color = gender))+
+      geom_point() +
+      geom_abline(slope = 0.0306 + 0.0796, 
+                  intercept = 3.95-0.184, 
+                  color="turquoise") +  #fitted line for men
+      geom_abline(slope = 0.0303, 
+                  intercept = 3.95,
+                  color = "red") + #fitted line for women 
+      labs(title = "Interaction effects model",
+           subtitle = "score ~ bty_avg*gender")
+    
+    ```
+
+    The equation of the interaction effects model is:
+    
+    score-hat = 3.95 + 0.0306*bty_avg - 0.184*gendermale + 0.0796*bty_avg*gendermale
+    
+    For males, the fitted  line is
+    score-hat = 3.95 + 0.0306*bty_avg -0.184 + 0.0796*bty_avg = 3.766 + 0.1102 *bty_avg
+              
+    For females, the fitted line is
+    score-hat = 3.95 + 0.0306*bty_avg
+    
+    
 
 5.  Compare the models from Parts I and II by calculating goodness of fit measures like $R^2$ and adjusted $R^2$.
 
+    ```{r calc-rsquare}
+    evals_main %>% glance() %>% 
+                    select(r.squared, adj.r.squared)
+    
+    evals_int %>% glance() %>% 
+                 select(r.squared, adj.r.squared)
+    
+    ```
 
 
 **PARTICIPATION: Please do your calculations for the following problem and then record your answers from the table into CANVAS for the quiz titled Participation 5**
 
-6. Using the main effects model, `evals_main_fit`, find the predicted score for a  female instructor who had a `bty_avg` score of 4.5? How about for a male instructor? Fill in the numbers in the table below.
+6. Using the main effects model, `evals_main`, find the predicted score for a  female instructor who had a `bty_avg` score of 4.5? How about for a male instructor? Fill in the numbers in the table below.
 
 |Gender | Predicted `score`  | 
 |:---   |    :---------      |
@@ -230,7 +291,7 @@ In this part, we will practice fitting a linear regression model with `score` as
 |Male   |                    |
 
 
-7. Repeat the previous problem using the interaction effects model `evals_int_fit`. 
+7. Repeat the previous problem using the interaction effects model `evals_int`. 
 
 |Gender | Predicted `score`  | 
 |:---   |    :---------      |
