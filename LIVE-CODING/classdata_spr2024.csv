@@ -1,0 +1,122 @@
+Timestamp,What is your class standing?,How many credits are you signed up for in Spr 2024?,Are you a vegetarian?,How many hours of sleep do you get on average each night? ,Would you date someone with a great personality even if you did not find them attractive?,What is your biological sex?,"How many hours do you study outside of classes (on average) per week? (if this is your first quarter at UW, you may skip this question) ",What day of the week were you born?,What is the most (in dollars) you have paid for a haircut?,How many pairs of shoes do you own?,How nervous are you about taking STAT 311,How many siblings do you have? (include step sibs too),"Suppose you were late to an exam and decided to use the ""flat tire"" excuse. Which tire would you  pick?",What is your height (in inches)?,What is the fastest you have ever driven (in miles per hour). Skip this question if you do not drive.,"How many years have you lived in WA state? (enter 0 if none, round your answer to a whole number)",How many friends do you have on snapchat? (enter 0 if you don't use it),How many friends do you have on instagram? (enter 0 if you don't use it),How many states in the U.S. have you visited?,How much money did you earn last year (in dollars )? ,Do you usually eat breakfast in the morning?,Do you wear eyeglasses or contact lenses?,What is your monthly rent?,"Scientists predict that global warming may have big effects on the polar regions within the next 100 years. One of the possible effects is that the northern ice cap may completely melt. Would this bother you a great deal, some, a little, or not at all if it actually happened?"
+3/23/2024 15:44,Freshman,15,No,9,yes,Male,20,Wednesday,30,3,3,2,left back,67,60,0,0,0,17,4000,Yes,Yes,1600,A great deal
+3/23/2024 15:47,Sophomore,17,No,7,yes,Male,10,Tuesday,15,2,3,1,left front,67,105,0,37,8,10,"$3,800 ",Yes,No,"$1,340 ",A great deal
+3/23/2024 16:12,Junior,15,No,6,"yes, No",Female,15,Saturday,40,6,3,2,left front,66,75,18,20,20,9,8000,Yes,Yes,1500,Somewhat
+3/23/2024 16:30,Junior,15,No,8,No,Male,12,Monday,45,4,2,0,left front,75,90,20,100,80,5,6000,No,Yes,0,A great deal
+3/23/2024 17:39,Freshman,15,No,7,No,Male,12,Tuesday,0.01,12,3,4,right front,73,80,19.5,200,630,4,6000,Yes,No,1300,Somewhat
+3/23/2024 18:42,Junior,14,No,5,yes,Female,10,Wednesday,450,7,4,1,left front,64,,7,32,758,24,1000,No,Yes,950,Somewhat
+3/23/2024 19:03,Freshman,15,No,6,"yes, No",Female,20,Sunday,40,7,3,1,left front,70,100,0,idk,900,30,1800,No,No,400,A great deal
+3/23/2024 20:22,Junior,17,No,7,No,Female,20,Saturday,22,11,3,2,right front,63,80,18,34,404,11,4000,Yes,Yes,1200,A great deal
+3/23/2024 20:52,Junior,15,Sometimes,7,No,Male,15,Wednesday,50,12,4,1,right front,71,95,20,0,0,9,25000,Yes,Yes,990,A great deal
+3/23/2024 21:39,Junior,14,Sometimes,8,No,Female,11,Thursday,325,9,3,1,right back,66,85,1,12,50,14,0,Yes,No,0,A great deal
+3/23/2024 22:15,Sophomore,16,No,8,No,Female,12,Saturday,60,7,5,2,left back,62,80,17,0,400,7,3000,Yes,No,1117,Somewhat
+3/24/2024 1:52,Junior,15,No,5,"yes, No",Female,45,Friday,60,6,4,1,right front,64,70,2,0,170,12,0,Yes,No,0,A great deal
+3/24/2024 10:38,Sophomore,17,No,8,No,Male,8,Saturday,60,3,1,6,right back,73,26,2,0,0,1,0,Yes,Yes,1154,Somewhat
+3/24/2024 11:00,Junior,15,No,7,No,Female,20,Monday,70,20,4,1,right front,66,87,21,532,1437,13,12000,Yes,No,1200,Somewhat
+3/24/2024 12:29,Junior,15,No,7,No,Male,8,Tuesday,50,7,4,1,right front,76,120,3,0,1000,23,"10,000",No,Yes,980,A great deal
+3/24/2024 14:42,Senior,14,No,7,No,Male,3,Tuesday,35,5,1,1,right back,68,60,19,0,0,8,3000,No,Yes,0,A great deal
+3/24/2024 16:21,Junior,15,No,7,yes,Female,25,Thursday,400,12,5,4,left front,65,90,8,0,230,10,6500,No,No,1201,A great deal
+3/24/2024 17:39,Sophomore,14,No,7,yes,Male,10,Thursday,80,3,2,3,left front,70,85,15,0,0,14,5000,Yes,Yes,850,Somewhat
+3/24/2024 19:29,Junior,14,No,10,No,Male,15,Monday,35,10,2,0,left back,70,95,20,15,627,32,4000,Yes,Yes,0,A little
+3/24/2024 20:06,Freshman,18,No,8,yes,Male,40,Thursday,12,5,3,1,right front,70,,0,10,180,7,0,No,No,2000,A great deal
+3/24/2024 20:10,Sophomore,12,No,7,No,Female,20,Monday,80,7,3,1,left back,64,90,2,0,253,14,2000,Yes,No,1100,A great deal
+3/24/2024 20:40,Sophomore,16,No,7,yes,Male,15,Wednesday,45,6,3,1,right front,71,105,19,25,500,17,10000,Yes,No,1400,A great deal
+3/24/2024 20:51,Junior,11,No,8,No,Male,5,Tuesday,45,7,2,2,left front,70,90,20,80,232,8,4000,Yes,No,0,Not al all
+3/24/2024 22:17,Junior,14,No,7,No,Male,10,Tuesday,50,6,1,0,left back,68,94,8,0,11,1,5000,No,Yes,500,Somewhat
+3/24/2024 22:26,Junior,15,No,8,yes,Female,10,Sunday,88,15,3,1,left front,66,80,0,200,1199,18,0,No,Yes,1117,A great deal
+3/24/2024 23:58,Junior,14,Sometimes,7,yes,Female,15,Friday,45,16,4,0,left back,68,90,1.5,120,720,21,10500,Yes,No,1900,A great deal
+3/25/2024 0:32,Junior,14,No,5,yes,Female,56,Tuesday,75,6,5,1,left front,67,,3,2,50,2,15000,No,Yes,850,Somewhat
+3/25/2024 0:53,Junior,17,No,6,No,Female,12,Saturday,60,12,4,2,left back,66.73,,9,6,7,3,8000,No,Yes,1520,A great deal
+3/25/2024 1:23,Freshman,18,No,6,No,Female,,Thursday,200,4,5,1,right back,67,,0,0,70,3,0,No,Yes,2000,
+3/25/2024 4:26,Junior,13,No,9,No,Prefer not to answer,36,Monday,50,10,1,3,left front,70,105,2.5,0,0,18,20000,Yes,No,1000,A great deal
+3/25/2024 5:58,Sophomore,18,Yes,8,No,Female,20,Tuesday,80,7,3,3,left front,68,90,18,57,723,8,10000,No,No,900,A great deal
+3/25/2024 7:24,Junior,14,No,5.5,yes,Male,5,Friday,30,3,3,2,left front,70,120,7,0,30,11,2000,No,No,0,A great deal
+3/25/2024 9:05,Junior,15,No,8,yes,Female,16,Saturday,70,10,5,1,right front,5.7,85,1,0,5,5,0,No,Yes,2000,A little
+3/25/2024 9:24,Sophomore,15,No,8,yes,Female,10,Wednesday,210,7,4,1,left back,61.75,,17,0,30,11,4000,No,No,1700,Somewhat
+3/25/2024 10:58,Senior,12,No,8,yes,Male,9,Sunday,30,2,4,0,right front,70.5,70,21,0,0,8,0,Yes,No,0,A great deal
+3/25/2024 12:03,Sophomore,14,No,7.5,No,Male,,Monday,36,6,3,1,left front,5.8,,2,0,101,8,0,No,Yes,1400,Somewhat
+3/25/2024 13:16,Freshman,18,No,8,No,Female,5,Wednesday,40,4,2,1,right front,69,120,17,256,755,10,"12,000",Yes,No,750,A great deal
+3/25/2024 13:17,Junior,14,No,8.5,yes,Female,10,Sunday,10,15,4,1,right back,63,60,20,35,350,5,"$1,600 ",Yes,Yes,1000,A great deal
+3/25/2024 13:36,Junior,15,No,8,yes,Male,10,Tuesday,45,6,3,1,right front,68,105,18,60,200,4,0,No,Yes,1200,A great deal
+3/25/2024 13:49,Junior,15,No,7,No,Male,4,Saturday,40,6,3,1,right front,68,100,21,0,60,6,"35,000",No,Yes,800,A great deal
+3/25/2024 14:55,Senior,12,No,9,yes,Female,23,Monday,75,15,4,3,right back,64,80,3,0,592,20,0,No,No,1400,Somewhat
+3/25/2024 15:00,Sophomore,14,No,8,No,Female,15,Thursday,70,20,4,1,left back,62,85,1,15,0,12,12000,No,No,2000,A great deal
+3/25/2024 15:13,Junior,15,No,8,No,Female,10,Tuesday,1,20,2,5,right front,70,60,5,0,700,27,2000,Yes,Yes,1500,A little
+3/25/2024 15:27,Junior,15,No,8,"yes, No",Female,10,Tuesday,0.00001,11,4,2,right front,67,120,20,0,50,6,0,Yes,Yes,1000,Somewhat
+3/25/2024 16:46,Sophomore,15,No,7,yes,Female,4,Tuesday,150,9,3,1,right back,65,85,20,500,1099,7,4000,Yes,Yes,1000,A great deal
+3/25/2024 18:43,Freshman,18,No,9,No,Female,6,Thursday,75,7,2,2,right back,62,90,13,30,700,4,"10,000",No,Yes,0,A great deal
+3/25/2024 19:51,Sophomore,15,No,8,No,Male,5,Tuesday,70,4,3,1,right back,75,100,0,200,931,6,1500,Yes,Yes,3400,A great deal
+3/25/2024 20:07,Sophomore,14,No,7,No,Female,6,Thursday,60,20,3,3,left front,67,85,19,208,403,7,1400,Yes,Yes,1200,A great deal
+3/25/2024 21:16,Freshman,17,No,8,yes,Female,5,Monday,120,7,5,0,right front,63.7,,0,0,100,5,0,No,Yes,1700,A little
+3/25/2024 21:25,Junior,15,No,7,No,Male,12,Tuesday,45,14,3,1,left front,69,100,21,122,605,11,12k,Yes,No,free,Somewhat
+3/25/2024 21:50,Junior,14,No,8,yes,Male,8,Tuesday,35,10,5,1,left back,71,102,2,0,0,4,0,Yes,No,1700,Somewhat
+3/25/2024 22:13,Freshman,17,No,7,No,Male,20,Wednesday,30,3,2,1,right back,71,,1,0,150,4,0,Yes,Yes,1333,A great deal
+3/26/2024 1:18,Junior,18,No,8,No,Male,15,Saturday,30,3,1,2,right back,72,60,18,0,5,10,4200,No,No,700,A little
+3/26/2024 6:58,Junior,15,No,8,No,Male,7,Sunday,160,3,3,1,left front,72,85,1,65,458,11,2000,Yes,No,1200,Somewhat
+3/26/2024 9:04,Junior,12,No,9,No,Female,15,Thursday,40,15,2,2,right front,66,90,19,0,478,9,9000,Yes,No,1100,A great deal
+3/26/2024 9:21,Senior,14,No,7,yes,Male,10,Tuesday,50,15,2,3,right front,66,140,20,0,0,6,10000,No,No,1500,Somewhat
+3/26/2024 11:02,Sophomore,15,Yes,8,yes,Female,22,Tuesday,90,12,3,2,right front,5.6,85,1.5,400,1100,30,8000,Yes,No,1200,A great deal
+3/26/2024 11:20,Sophomore,15,No,7,No,Male,20,Saturday,40,8,5,1,left front,73,100,1,0,397,13,0,Yes,Yes,"$1,100 ",A great deal
+3/26/2024 11:50,Senior,15,No,7,No,Female,4,Friday,180,27,4,2,right front,66,113,22,237,1136,15,4000,No,Yes,1150,A great deal
+3/26/2024 12:06,Sophomore,9,No,7,yes,Male,20,Wednesday,30,5,1,2,right front,72,40,2,0,125,7,3000,Yes,Yes,1450,A little
+3/26/2024 12:55,Junior,16,No,8,yes,Male,5,Tuesday,18,2,1,1,left front,69,100,1,8,55,13,4320,No,Yes,1400,A great deal
+3/26/2024 12:56,Sophomore,12,No,8.5,No,Male,12,Thursday,65,15,1,0,right front,69,92,19,50,280,14,6000,No,No,0,A little
+3/26/2024 13:08,Sophomore,20,No,7,No,Prefer not to answer,6,Tuesday,150,3,2,1,left front,72,95,2,150,1257,3,6000,No,Yes,1320,Somewhat
+3/26/2024 13:42,Freshman,18,No,8,yes,Female,35,Thursday,50,20,4,0,left front,5.5,,0,0,7,3,0,Yes,Yes,1400,Somewhat
+3/26/2024 13:51,Junior,17,No,7.5,yes,Female,15,Wednesday,50,49,4,0,right back,67,120,2,400,1727,19,4532.32,Yes,No,"$1,336 ",Somewhat
+3/26/2024 13:59,Sophomore,15,No,7,yes,Male,7,Thursday,80,3,3,2,right front,69,,1,0,31,7,0,Yes,Yes,1062,A great deal
+3/26/2024 14:12,Senior,18,No,6,No,Female,30,Monday,25,3,2,1,left front,60.25,80,18,0,259,12,2000,No,Yes,900,A great deal
+3/26/2024 14:13,Junior,12,No,6,yes,Male,15,Sunday,35,4,5,1,right front,72,100,23,0,56,4,0,No,No,0,A great deal
+3/26/2024 14:45,Junior,18,No,8,yes,Male,40,Thursday,80,3,2,1,right back,74,105,1,168,214,27,50000,Yes,Yes,1500,A great deal
+3/26/2024 14:57,Sophomore,15,No,7,No,Male,10,Wednesday,100,4,5,2,right back,5.9,200,2,6,100,8,100,No,No,1400,Somewhat
+3/26/2024 15:57,Sophomore,19,No,8,yes,Male,20,Wednesday,55,15,3,1,right back,71,110,20,250,700,20,25000,No,No,1100,Not al all
+3/26/2024 15:58,Sophomore,12,No,7,No,Male,25,Friday,65,12,3,0,left back,70,110,20,250,650,12,"10,500",No,No,2500,A great deal
+3/26/2024 16:42,Junior,14,No,6.5,No,Female,6,Thursday,70,3,4,1,left front,63,90,10,40,456,20,5000,Yes,No,800,A great deal
+3/26/2024 18:56,Sophomore,15,No,7,yes,Male,20,Monday,25,4,5,2,right front,64,95,19,30,30,6,4000,Yes,No,1490,Somewhat
+3/26/2024 19:37,Junior,8,Sometimes,6.5,No,Female,24,Saturday,120,23,5,4,left back,68,98,30,31,242,5,2189,Yes,Yes,2710,A great deal
+3/26/2024 20:05,Freshman,18,No,8,yes,Male,20,Tuesday,23,8,4,1,left front,5,80,0,30,840,4,0,Yes,No,1400,Somewhat
+3/26/2024 22:01,Sophomore,18,No,9,yes,Male,12,Monday,50,5,3,0,right front,72,95,18,70,295,6,6000,Yes,Yes,$436.48 ,Somewhat
+3/26/2024 23:40,Freshman,14,No,8,No,Female,15,Saturday,100,8,4,1,right front,61,70,19,0,590,12,800,No,No,1300,A great deal
+3/26/2024 23:58,Sophomore,13,Yes,6,yes,Female,14,Thursday,100,4,4,1,left front,62,,8,0,133,8,500,Yes,Yes,"1,117",A great deal
+3/27/2024 10:43,Sophomore,13,No,9,yes,Female,20,Tuesday,500,20,5,1,right front,62,95,0,500,1458,1,10000,No,No,1300,Somewhat
+3/27/2024 11:33,Junior,15,No,7,yes,Male,10,Sunday,55,4,2,3,right front,67,110,3,150,460,2,2000,No,Yes,1590,Somewhat
+3/27/2024 12:44,Freshman,17,No,6,yes,Male,14,Sunday,28,6,4,3,right front,70,85,18,59,337,8,0,No,Yes,1617,A great deal
+3/27/2024 13:31,Sophomore,18,No,8,No,Female,25,Thursday,200,9,3,1,right back,63,70,1,35,741,19,0,Yes,No,"$1,340 ",A great deal
+3/27/2024 13:33,Sophomore,11,No,5,yes,Female,10,Thursday,120,6,4,5,left back,66.75,84,12,0,0,5,"10,000",No,Yes,850,A great deal
+3/27/2024 13:40,Sophomore,15,No,6,No,Male,20,Saturday,40,13,1,0,left front,69,123,2,105,140,16,43600,No,Yes,1500,A great deal
+3/27/2024 14:00,Junior,15,No,6,No,Male,7,Thursday,60,6,2,2,left back,75,140,3,374,540,23,8000,No,Yes,1170,A great deal
+3/27/2024 14:02,Junior,15,No,7,yes,Female,10,Friday,30,5,3,3,right front,65,,21,150,600,6,6000,Yes,No,1089,A great deal
+3/27/2024 14:09,Sophomore,15,No,7,yes,Female,10,Saturday,200,7,3,3,right back,62,80,19,200,500,12,10000,No,No,1400,Somewhat
+3/27/2024 14:51,Junior,15,Yes,7,yes,Female,40,Monday,01,8,5,1,right front,60,100,8,30,50,18,4500,No,Yes,0,Not al all
+3/27/2024 15:16,Junior,15,No,5,yes,Male,15,Tuesday,50,10,2,2,left front,68,80,19,0,600,3,24000,No,No,4000,Somewhat
+3/27/2024 15:27,Junior,12,No,8,No,Male,10,Monday,40,7,2,2,left back,75,110,15,240,200,4,15000,Yes,No,0,Somewhat
+3/27/2024 15:30,Senior,17,No,8,yes,Male,15,Saturday,40,10,4,1,right front,69,124,22,50,150,10,48000,Yes,No,850,A great deal
+3/27/2024 15:33,Sophomore,16,No,8,No,Male,9,Friday,55,6,2,0,left front,72,115,19,0,350,10,1000,No,Yes,1000,A great deal
+3/27/2024 15:41,Freshman,18,No,7,yes,Male,30,Friday,100,7,3,1,left back,71.65,63,almost 1 ,40,450,2,0,No,Yes,1300,Somewhat
+3/27/2024 15:41,Sophomore,15,Yes,9,yes,Female,26,Tuesday,160,15,4,1,left back,63,100,2,400,800,45,$300 ,Yes,No,1023,A great deal
+3/27/2024 15:43,Senior,15,No,7,No,Male,8,Monday,120,17,3,1,right front,73.2,100,12,0,300,6,25000,No,Yes,1450,A great deal
+3/27/2024 15:45,Sophomore,15,No,8,No,Male,4,Saturday,45,3,2,4,left back,71,110,15,200,"1,000",10,"$8,000 ",No,Yes,"1,400",A great deal
+3/27/2024 15:50,Sophomore,14,No,9,No,Female,15,Thursday,30,12,4,1,right front,65,120,20,125,1000,9,"15,000",No,Yes,"1,300",A great deal
+3/27/2024 15:53,Sophomore,14,No,7.5,No,Male,25,Saturday,40,5,1,1,right front,72,150,0,0,890,4,0,No,No,1670,Not al all
+3/27/2024 15:58,Sophomore,15,Yes,8,No,Male,7,Monday,20,3,2,1,left front,68,80,16,100,1000,4,0,Yes,Yes,1300,A great deal
+3/27/2024 22:48,Sophomore,15,No,8,No,Female,25,Monday,30,3,4,1,right back,64,100,19,0,1100,8,8000,No,Yes,1000,A great deal
+3/27/2024 23:38,Sophomore,15,No,9,No,Female,10,Thursday,20,8,4,1,left front,67,85,9,0,200,20,7000,Yes,No,0,A great deal
+3/28/2024 2:00,Junior,16,No,7,yes,Male,30,Saturday,70,11,2,3,right back,75,115,21,46,0,2,0,No,No,0,A little
+3/28/2024 12:35,Junior,13,No,7,No,Female,10.5,Sunday,65,7,3,0,right back,62,75,2,300,1000,5,n/a,No,Yes,n/a,A little
+3/28/2024 14:06,Senior,14,No,6,yes,Female,6,Friday,40,5,3,0,right back,64,,2,0,11,3,4580,No,Yes,850,Somewhat
+3/28/2024 14:37,Freshman,17,No,8,No,Female,20,Sunday,100,7,4,1,right front,5,60,4,0,50,3,2000,No,Yes,1500,Somewhat
+3/28/2024 14:41,Sophomore,18,No,8,yes,Male,10,Friday,20,8,2,4,left front,69,70,20,0,150,6,5000,Yes,Yes,0,A great deal
+3/28/2024 15:38,Junior,13,No,5,No,Male,6,Saturday,60,7,2,1,right back,66,105,14,0,I don't know how to count this.,5,16000,No,No,1200,A great deal
+3/28/2024 15:41,Junior,14,No,8,No,Male,10,Tuesday,50,6,2,1,right back,72.99,95,1,200,650,7,0,No,Yes,1330,Somewhat
+3/28/2024 16:36,Senior,15,No,8,No,Female,15,Saturday,70,11,3,1,right back,5.6,,3,0,187,5,0,No,Yes,1352,A great deal
+3/28/2024 18:13,Sophomore,18,Sometimes,5,yes,Female,5,Thursday,5,4,4,1,left front,66,105,2,72,161,16,5000,No,No,1409,A great deal
+3/28/2024 18:32,Freshman,18,No,7,No,Male,,Wednesday,180,10,3,1,right back,70,75,1,1,3,4,0,No,Yes,1550,Somewhat
+3/29/2024 0:30,Sophomore,16,No,8,yes,Female,40,Tuesday,40,25,3,0,right front,63,90,1,105,529,21,200,Yes,No,"1,704",A great deal
+3/29/2024 10:40,Senior,10,Sometimes,7,yes,Male,15,Friday,30,10,1,2,right front,71,110,29,0,0,44,0,Yes,No,own,A great deal
+3/29/2024 15:35,Freshman,15,No,7.5,No,Male,12,Sunday,55,10,2,1,left front,76,90,16,124,684,12,1200,No,No,1500,A great deal
+3/29/2024 15:47,Freshman,15,No,7,yes,Male,10,"Wednesday, Friday",300,6,1,7,left front,72,93,0,0,790,6,10750,No,Yes,1675,A little
+3/31/2024 11:14,Senior,10,No,7.5,yes,Male,10,Friday,20,1,1,2,right back,60,,20,0,0,12,0,Yes,No,"$1,300 ",Somewhat
+4/1/2024 4:08,Junior,15,Sometimes,6,No,Female,23,Friday,30,7,3,1,left front,63,65,5,0,0,7,"10,000",Yes,Yes,940,A great deal
+4/1/2024 16:35,Junior,5,No,6,No,Male,5,Thursday,80,8,3,1,left front,73,110,21,200,600,13,0,Yes,No,1100,A great deal
+4/2/2024 15:34,Junior,14,No,8,yes,Male,6,Sunday,30,4,1,3,left front,66,90,6,283,310,10,7150,No,No,880,Somewhat
+4/3/2024 11:13,Junior,13,No,9,yes,Female,44,Sunday,230,17,1,1,left back,60,65,15,0,724,14,2920.68,No,No,0,Somewhat
