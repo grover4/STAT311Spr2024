@@ -28,7 +28,7 @@ library(skimr)          #for skimming variables
 The class data was collected via a Google form and was downloaded as a CSV file named `classdata_spr2024.csv`. The codebook with a description of the variables in the dataset is shown below. The overall data cleaning steps were extremely minimal. I renamed the variables so they were shorter. Additional data cleaning and recoding is done for the variables involved in specific analyses and these will be described in the relevant sections. All the code is included in the Rmarkdown document. 
 
 ```{r data-cleaning, include = FALSE}
-classdata <- read_csv(file="classdatasp24.csv")
+classdata <- read_csv(file="classdata_spr2024.csv")
 
 classdata <- classdata %>%
              rename( class = contains("class standing"),
