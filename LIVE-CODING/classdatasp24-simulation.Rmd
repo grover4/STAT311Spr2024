@@ -56,7 +56,7 @@ classdata <- classdata %>%
                climate_worry = contains("global warming") ) 
 
 classdata <- classdata %>% 
-           mutate(dating_pref = na_if(dating_pref, "yes;No"),
+           mutate(dating_pref = na_if(dating_pref, "yes, No"),
                   sex = na_if(sex, "Prefer not to answer") ) 
 
 ```
