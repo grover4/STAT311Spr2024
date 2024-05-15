@@ -127,8 +127,16 @@ We will therefore need to conduct a significance test to see whether this is in 
 
 4. Use `tidymodels` to implement your scheme from exercise 3. Fill in the blanks in the code below. 
 
+    ```{r null-simulation, eval = F}
+    null_sim <- ___ %>%
+                specify(response = ___, success = ___) %>%
+                hypothesize(null = "point", p = ___) %>%
+                generate( reps = ___, type = "___") %>%
+                calculate(stat = "___")
 
-5. Let's visualize the null distribution of the sample proportion and calculate the p-value to assess how unusually large our value is. Fill in the blanks in the code chunk below. 
+    ```
+
+5. Let's visualize the null distribution of the sample proportion and calculate the p-value to assess how unusually large our value is. 
 
 
 A small p-value tells us that our sample result lies in a tail of the null distribution. 
