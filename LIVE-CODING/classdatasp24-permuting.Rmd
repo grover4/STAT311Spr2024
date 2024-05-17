@@ -1,0 +1,191 @@
+---
+title: "Significance testing the class survey - Part II "
+subtitle: "Ranjini Grove"
+date: "`r Sys.Date()`"
+output:    
+      html_document:
+         toc: no
+         toc_float: no
+      editor_options:
+         chunk_output_type: console
+---
+
+Today we will test independence between two variables by conducting significance tests which use permutation as a way to mimic sampling variability. The data are the survey responses from STAT 311 students collected at the start of spring quarter 2024. 
+
+The packages we will be using have been loaded in the code chunk below.
+
+```{r load-packages, include=FALSE}
+library(tidyverse)                 #umbrella suite
+library(tidymodels)                #modeling/inference
+library(janitor)                   #tabyl
+
+```
+
+## Data
+
+The class data was collected via a Google form and was downloaded as a CSV file named `classdata_spr2024.csv`. The codebook with a description of the variables in the dataset is shown below. The overall data cleaning steps were extremely minimal. I renamed the variables so they were shorter. Additional data cleaning and recoding is done for the variables involved in specific analyses and these will be described in the relevant sections. All the code is included in the Rmarkdown document. 
+
+```{r data-cleaning, include = FALSE}
+classdata <- read_csv(file="classdata_spr2024.csv")
+
+classdata <- classdata %>%
+             rename( class = contains("class standing"),
+               credits = contains("credits"),
+               diet = contains("vegetarian"),
+               sleep = contains("sleep"),
+               dating_pref=contains("attractive"),
+               sex=contains("sex"),
+               gender=contains("gender"),
+               study=contains("study"),
+               birthday=contains("born"),
+               section=contains("quiz section"),
+               haircut=contains("haircut"),
+               shoes=contains("shoes"),
+               nervous=contains("nervous"),
+               siblings=contains("siblings"),
+               which_tire=contains("tire"),
+               height=contains("height"),
+               speed=contains("fastest"),
+               years_in_wa=contains("WA state"),
+               snapchat=contains("snapchat"),
+               insta=contains("instagram"),
+               travel=contains("visited"),
+               salary=contains("earn"),
+               breakfast=contains("breakfast"),
+               eyewear=contains("eyeglasses"),
+               rent=contains("rent"),
+               climate_worry = contains("global warming") ) 
+
+classdata <- classdata %>% 
+           mutate(dating_pref = na_if(dating_pref, "yes, No"),
+                  sex = na_if(sex, "Prefer not to answer") ) 
+
+```
+
+
+|Variable |  Description |
+| :----:  |  :--------  |
+|Timestamp| Self explanatory |
+|class    | What is your class standing?|
+|credits  | How many credits are you signed up for in Win 2022?|
+|vegetarian| Are you a vegetarian?|
+|sleep    | How many hours of sleep do you get on average at night?|
+|dating_pref| Would you date someone with a great personality even if you did not find them attractive? |
+| sex     | What is your biological sex? |
+|gender   | To which gender do you most closely identify? |
+|study    |How many hours do you study outside of classes (on average) per week? (if this is your first quarter at UW, you may skip this question) |
+|birthday | What day of the week were you born? |
+|section  | Which quiz section are you in? |
+|haircut | What is the most (in dollars) you have paid for a haircut? |
+|shoes   | How many pairs of shoes do you own? |
+|nervous | How nervous are you about taking STAT 311?|
+|siblings | How many siblings do you have? (include step sibs too)|
+|which_tire| Suppose you were late to an exam and decided to use the "flat tire" excuse. Which tire would you  pick?|
+|height | What is your height (in inches)?|
+|years_in_wa | How many years have you lived in WA state? (enter 0 if none, round your answer to a whole number)|
+|snapchat | How many friends do you have on snapchat? (enter 0 if you don't use it)|
+|insta| How many friends do you have on instagram? (enter 0 if you don't use it)|
+|travel |How many states in the U.S. have you visited?|
+|salary| How much money did you earn last year (in dollars )? |
+|breakfast| Do you usually eat breakfast in the morning?|
+|eyewear | Do you wear eyeglasses or contact lenses?|
+|rent | What is your monthly rent?|
+|climate_worry| Scientists predict that global warming may have big effects on the polar regions within the next 100 years. One of the possible effects is that the northern ice cap may completely melt. Would this bother you a great deal, some, a little, or not at all if it actually happened?|
+
+
+## Exercises
+
+### Part 1: Are men superficial when it comes to dating?
+
+The variable `dating_pref` contains responses to the question "Would you date someone with a great personality even if you did not find them attractive?" In this exercise, we will conduct a hypothesis test to see whether men and women respond differently to this question.
+
+
+1. The following table summarises the relationship between the variables `sex` and `dating_pref`.  What fraction of males said they would date someone who they did not find attractive? Same question for women. Use R as a calculator to find the difference between the proportions of men and women who respond "yes" to the `dating_pref` question (Male - Female). Save this difference in a variable called `obs_diff`.
+
+```{r data-summary}
+
+classdata %>% tabyl(sex, dating_pref, show_na = FALSE) %>% 
+             adorn_totals(where="col") %>%
+             adorn_title()
+
+
+
+```
+
+Clearly men are less likely than women to agree that they would be willing date someone they don't find attractive. But the difference is small. In this part, we will examine whether this difference can be explained by sampling variability or if it points to a substantive difference between men and women.
+
+
+2. Which of the following claims represents the null and which one is the alternative hypothesis? 
+
+    a. Males are less likely than Females to say they are open to dating someone they don't find attractive 
+    
+    b. Males and Females are equally likely to be open to dating someone they don't find attractive. Any differences we observe are due to sampling variability.
+
+
+3. Describe in words (no code needed for this part) how you could simulate outcomes under the null hypothesis by shuffling a deck with two kinds of cards: one kind says "yes" and the other "no". Be sure to mention how many cards of each kind are in the deck.
+
+
+    
+4. Using `tidymodels` create a benchmark of what we should see for outcomes if the null hypothesis is true.
+
+    ```{r null-sim, eval = FALSE}
+    set.seed(141)
+
+    null_dist <- classdata %>%
+             filter(!is.na(sex), !is.na(dating_pref)) %>%
+             specify(___ ~ ___, success = "___") %>%
+             hypothesize(null = "___") %>%
+             generate(reps = 1000, type = "___") %>%
+             calculate(stat = "___", 
+                        order=c("___", "___") )
+
+
+    ```
+
+5. Let's visualize the null distribution and calculate the p-value and make a conclusion. Fill in the blanks in the code chunk below. 
+
+    ```{r calc-p-value, eval=F}
+    null_dist %>% visualize() 
+
+    null_dist %>% get_p_value(obs_stat = ___,
+                          direction = "___")
+   
+    ```
+ 
+
+
+The p-value is large suggesting that we cannot reject the null hypothesis. We don't have evidence that sex and dating preferences are related.
+
+
+
+**Please do your calculations for the remaining problems in Part II below and then record your answers to problem 1 and problem 5 in CANVAS for the quiz titled Participation 8**
+
+### Part II: Are men more likely to need eyewear?
+
+Create a table to summarize the relationship between the variables `sex` and `eyewear`.  
+
+
+1. Use R as a calculator to find the difference between the proportions of men and women who respond "Yes" to the `eyewear` question (Male - Female). 
+
+
+As the table makes clear, men are more likely than women to wear eyewear. In this part, we will examine whether this difference can be explained by sampling variability or if it points to a substantive difference between men and women.
+
+
+2. Which of the following claims represents the null and which one is the alternative hypothesis? 
+
+    a. Males are more likely than Females to wear eyewear
+    
+    b. Males and Females are equally likely to wear eyewear; any differences we observe are simply due to sampling variability.
+    
+
+3. Using `tidymodels` create a benchmark of what we should see for outcomes if the null hypothesis is true. The seed has been set to 311. Fill in the blanks in the code chunk below to find the null distribution of the difference in proportions (Male - Female).
+
+
+4. Visualize the null distribution 
+
+
+5. Calculate the p-value to assess how unusually large the difference in proportions is in the null distribution.
+
+
+
+
