@@ -1,0 +1,159 @@
+---
+title: "Inference from the General Social Survey "
+subtitle: "Ranjini Grove"
+date: "`r Sys.Date()`"
+output:    
+      html_document:
+         toc: no
+         toc_float: no
+      editor_options:
+         chunk_output_type: console
+---
+
+Today we will practice making inference by constructing confidence intervals and performing hypothesis tests using the General Social Survey Data.
+
+The packages we will be using have been loaded in the code chunk below. Run them to load them in your Console as well.
+
+
+```{r load-packages, include=FALSE}
+library(tidyverse)      #umbrella suite
+library(tidymodels)     #for infer
+library(janitor)        #for 
+
+
+```
+
+## Data
+
+We will follow the instructions in Lab 10 to select variables using the *Survey Documentation and Analysis* (SDA) [archive](https://sda.berkeley.edu/index.html). In this activity, we will focus on the respondents from 2016 and the following variables:
+
+|RESPONDENT BACKGROUND VARIABLES  | VARIABLES 
+|:-----------------------         | :-------  
+| Age, Gender, Race, Ethnicity    | `sex`
+| Education                       | `educ`
+
+
+| ADDED IN 2016                   | VARIABLES
+|:-----------------------         | :-------  
+|Core                             | `agedchld`
+|Flexible work                    | `usualhrs`
+|Science, knowledge and attitudes | `evolved2`
+
+Use the **Upload** button in Rstudio to upload the data file `sub-data.txt` you just created to our server. Be sure to save the file to your livecoding folder.  **Set your working directory to this folder as well so you can run code interactively from the Console.** 
+
+Click on the datafile and take a look at what you have created!
+It may seem confusing as the columns are separated by commas and not aligned. If you open the codebook and look at how the variables are encoded, you will also obtain a better understanding of what you see. In particular, there are several missing data codes accounting for the various reasons why a response may be missing: .d,.i,.j,.m,.n,.p,.q,.r,.s,.u,.x,.y,.z
+
+Let's go ahead and read it in by adding a line in the `load-packages` code chunk up above.
+
+## Analysis
+
+Today, we will consider each of the inferential techniques we have learned about over the last couple of weeks.Specifically we will practice
+
+- making a confidence interval for a population value
+
+- testing a claim about a population proportion
+
+- examining independence of two variables
+
+Each method essentially emulates sampling variability, but in different scenarios. For example, while creating a confidence interval, we wish to emulate variability when samples are drawn from a population which is very much like our observed sample. 
+
+When testing hypotheses, we examine sampling variability when samples are drawn from a particular hypothesized population. 
+
+## Part 1: Confidence intervals by bootstrapping
+
+### Is a 40 hour work week a myth?
+
+The variable `usualhrs` records answers to the question "how many hrs/week do you usually work in a week.
+
+a. Make a histogram of this variable and calculate the mean or median (depending on the shape) and save it in a variable called `obs_avg`.
+
+
+b. Now calculate a 95% confidence interval for the average number of hours that Americans typically work in a week by bootstrapping 1,000 resamples. Use a seed of 71 for your simulations. Report your interval in a sentence.
+
+
+
+Next we consider a variation of the question posed above.
+
+### What % of Americans work over 60 hours per week?
+
+a. Create and a new variable called `work_over_60` which takes the value "yes" for respondents who reported working over 60 hours a week and "no" otherwise. Print the frequency distribution and save and report the value for the proportion of "yes" in a variable called `obs_prop`.
+
+
+b. Calculate a 95% confidence interval for the proportion of Americans who work over 60 hours in a week by bootstrapping 1,000 resamples. Use a seed 4748 for your simulations. Report your interval in a sentence. 
+
+
+
+
+## Does higher education imply longer working hours?
+
+Here we want to examine the relationship between `usualhrs` and `educ`. 
+
+a. Make a scatterplot to examine the relationship between `usualhrs` and `educ`. Smooth the plot with a trend line. Does there seem to be much of a relationship?
+
+
+
+b. Fit a simple linear model using `educ` as the explanatory variable and `usualhrs` as the response variable. Print the coefficients in a tidy format and interpret the slope.
+
+
+
+c. Calculate a 95% confidence interval for the slope in the population by bootstrapping 1,000 resamples. Use a seed 131 for your simulations. Report your interval in a sentence. Based on your interval, would you think it necessary to include `educ` in a model for explaining variation in `usualhrs`?
+
+
+
+
+## Part 2: Hypothesis Tests
+
+
+### What percentage of Americans know that elephants evolved from an earlier species?
+
+a. Recode the variable `evolved2` to "true" and "false". What percentage of respondents answered "true"? Save this in a variable called `obs_prop`.
+
+
+
+
+    Is it plausible that only 75% of Americans would know the answer to this question? Let's simulate the benchmark of what we should see in our sample if this were the case.
+
+
+b. Using a seed of 18, simulate the benchmark of what we should see for our sample proportion if the true population percentage of Americans who know the answer to this question is 75%. Visualize the resulting distribution.
+
+
+c. Visualize the null distribution and shade and calculate the p-value for assessing how unusually large our observed sample proportion is, relative to what's expected under sampling variability alone. What do you conclude?
+
+
+
+d. Calculate a 95% confidence interval for the possible values of the population proportion.
+
+
+### Do men and women feel differently about boomerang kids?
+
+Finally, we will examine the relationship between `sex` and `agedchld`. 
+
+a. Recode `sex` as a new variable called `sex_label` so that the labels say "male" and "female".
+
+b. Recode `agedchld` to `agedchld_label` as follows:
+
+| `agedchld` | `agedchld_label` |
+|:-----      | :-------         |
+| 1          | "yes"            |
+| 2 or 3     | "no or maybe"    |
+
+
+
+
+c. Create a table summarizing the relationship. Also calculate the difference between the proportion (female - male) who say "yes". Save this in a variable called `obs_diff`
+
+
+
+    Clearly women were more likely to think it's a good idea, but the difference is small.
+Let us know examine whether the difference can be explained by sampling variability.
+
+d. Create a benchmark of what we should see for the `obs_diff` if the differences between male and female responses can be explained by sampling variability. Use a seed of 1381
+
+
+
+
+
+e. Visualize the distribution and shade and calculate the pvalue to assess how unusually large our `obs_diff` is relative to what's expected under sampling variability alone. What do you conclude?
+
+
