@@ -115,12 +115,12 @@ a. Recode the variable `evolved2` to "true" and "false". What percentage of resp
     Is it plausible that only 75% of Americans would know the answer to this question? Let's simulate the benchmark of what we should see in our sample if this were the case.
 
 
-b. Using a seed of 18, simulate the benchmark of what we should see for our sample proportion if the true population percentage of Americans who know the answer to this question is 75%. Visualize the resulting distribution.
-
+b. Using a seed of 18, simulate the benchmark of what we should see for our sample proportion if the true population percentage of Americans who know the answer to this question is 75%. 
 
 c. Visualize the null distribution and shade and calculate the p-value for assessing how unusually large our observed sample proportion is, relative to what's expected under sampling variability alone. What do you conclude?
 
 
+If you are curious about what values are plausible for the population proportion, we could just calculate a confidence interval to find out.
 
 d. Calculate a 95% confidence interval for the possible values of the population proportion.
 
@@ -141,7 +141,7 @@ b. Recode `agedchld` to `agedchld_label` as follows:
 
 
 
-c. Create a table summarizing the relationship. Also calculate the difference between the proportion (female - male) who say "yes". Save this in a variable called `obs_diff`
+c. Create a table summarizing the relationship between `sex` and `agedchld_label`. Also calculate the difference between the proportion (female - male) who say "yes". Save this in a variable called `obs_diff`
 
 
 
